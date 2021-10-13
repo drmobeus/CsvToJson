@@ -5,11 +5,13 @@ using System.Threading;
 using System.Threading.Tasks;
 using CsvHelper;
 using CsvHelper.Configuration;
+using CsvToJson.Models;
+using CsvToJson.Writers;
 using Microsoft.Extensions.Logging;
 using Microsoft.WindowsAzure.Storage.Blob;
 using Newtonsoft.Json;
 
-namespace CsvToJson
+namespace CsvToJson.Processors
 {
     public class ParallelProcessor:IProcessor
     {

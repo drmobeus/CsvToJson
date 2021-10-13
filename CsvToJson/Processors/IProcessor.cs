@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Microsoft.WindowsAzure.Storage.Blob;
 
-namespace CsvToJson
+namespace CsvToJson.Processors
 {
     public interface IProcessor
     {

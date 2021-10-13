@@ -1,6 +1,6 @@
 ﻿using CsvHelper.Configuration.Attributes;
 
-namespace CsvToJson
+namespace CsvToJson.Models
 {
     public class CsvRecordType
     {

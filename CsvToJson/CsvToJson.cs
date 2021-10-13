@@ -3,6 +3,8 @@ using Microsoft.Azure.WebJobs;
 using Microsoft.Extensions.Logging;
 //using System.Text.Json;     //We need to talk about this!?
 using System.Threading.Tasks;
+using CsvToJson.Processors;
+using CsvToJson.Writers;
 using Microsoft.WindowsAzure.Storage.Blob;
 using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;

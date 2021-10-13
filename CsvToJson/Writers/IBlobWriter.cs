@@ -1,6 +1,6 @@
 ﻿using Microsoft.WindowsAzure.Storage.Blob;
 
-namespace CsvToJson
+namespace CsvToJson.Writers
 {
     public interface IBlobWriter
     {

@@ -1,6 +1,5 @@
 using System.IO;
 using System.Threading.Tasks;
-using FluentAssertions;
 using Moq;
 using NUnit.Framework;
 
@@ -27,8 +26,6 @@ namespace CsvToJson.UnitTests
 
             var expectedOutput = "{\"Id\":1,\"Name\":\"Fey\"}";
             MockCloudBlockJsonBlob.Verify(x => x.UploadTextAsync(expectedOutput), Times.Once);
-
-            Logger.GetLogMessages().Count.Should().Be(4);
         }
 
         [Test]
@@ -44,7 +41,6 @@ namespace CsvToJson.UnitTests
             Stream s = new MemoryStream();
 
             await new CsvToJsonFunction(ParallelProcessor).Run(s, "test.csv", Logger, Context, MockBlobJsonContainer.Object, MockBlobCsvContainer.Object, MockBlobErrorContainer.Object);
-
 
             MockCloudBlockCsvBlob.Verify(d => d.DeleteAsync(), Times.Once);
         }
@@ -63,8 +59,6 @@ namespace CsvToJson.UnitTests
             MockCloudBlockJsonBlob.Verify(x => x.UploadTextAsync(It.IsAny<string>()), Times.Never);
 
             MockCloudBlockErrorBlob.Verify(x => x.StartCopyAsync(MockCloudBlockCsvBlob.Object), Times.Once);
-
-            Logger.GetLogMessages().Count.Should().Be(2);
         }
 
         [Test]
@@ -99,8 +93,6 @@ namespace CsvToJson.UnitTests
             MockCloudBlockJsonBlob.Verify(x => x.UploadTextAsync(It.IsAny<string>()), Times.Never);
 
             MockCloudBlockErrorBlob.Verify(x => x.StartCopyAsync(MockCloudBlockCsvBlob.Object), Times.Once);
-
-            Logger.GetLogMessages().Count.Should().Be(2);
         }
 
         [Test]
@@ -116,7 +108,6 @@ namespace CsvToJson.UnitTests
             Stream s = new MemoryStream();
 
             await new CsvToJsonFunction(ParallelProcessor).Run(s, "test.csv", Logger, Context, MockBlobJsonContainer.Object, MockBlobCsvContainer.Object, MockBlobErrorContainer.Object);
-
 
             MockCloudBlockCsvBlob.Verify(d => d.DeleteAsync(), Times.Once);
         }
