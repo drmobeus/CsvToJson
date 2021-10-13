@@ -32,9 +32,9 @@ Deployment follows normal standard Azure function deployment practices.
 
 #Architecture
 
-![](.\images\CSVToJSON-Architecture.png)
+![](.\Documentation\images\CSVToJSON-Architecture.png)
 
-![](.\images\csv-to-json-flowchart.drawio.png)
+![](.\Documentation\images\csv-to-json-flowchart.drawio.png)
 
 ---
 
